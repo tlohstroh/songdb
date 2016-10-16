@@ -1,4 +1,4 @@
 class Artist < ApplicationRecord
-  validates :name, presence: true
+  validates :artist_name, presence: true
   has_many :songs, dependent: :destroy
 end
