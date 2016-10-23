@@ -11,4 +11,5 @@
 
 <% @artists.each do | artist| %>
 <%= link_to artist.name, artist_path(artist.id) %><br>
+<a href="<%=artist_path(artist.id) %>"><img class="artist-thumb" src="<%=artist.img_url%>" alt = "<%= artist.name %>" style="width:300px;height:300px;"></a><br>
 <% end %>
