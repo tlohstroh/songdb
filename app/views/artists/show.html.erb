@@ -1,1 +1,10 @@
 <h1><%= @artist.name %></h1>
+
+<ul>
+<% @songs.each do |song| %>
+  <%if song.artist[:id] == @artist[:id]%>
+  <li><%=song.name%></li>
+
+  <%end%>
+<%end%>
+</ul>
