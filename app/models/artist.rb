@@ -6,4 +6,18 @@ class Artist < ApplicationRecord
     order(:name)
   end
 
+  def self.order_by_name_desc
+    order(:name).reverse
+  end
+
+  def self.order_by_created
+    order(:created_at)
+  end
+
+  def self.order_by_created_desc
+    order(:created_at).reverse
+  end
+
+
+
 end

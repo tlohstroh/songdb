@@ -1,5 +1,14 @@
 <h1>Artists</h1>
 
+<ul>
+  <li><%= link_to "sort by name (asc)", :sort => "name", :direction => "asc" %></li>
+  <li><%= link_to "sort by name (desc)", :sort => "name", :direction => "desc" %></li>
+  <li><%= link_to "sort by date added (asc)", :sort => "created_at", :direction => "asc" %></li>
+  <li><%= link_to "sort by date added (desc)", :sort => "created_at", :direction => "desc" %></li>
+
+
+</ul>
+
 <% @artists.each do | artist| %>
 <%= link_to artist.name, artist_path(artist.id) %><br>
 <% end %>
