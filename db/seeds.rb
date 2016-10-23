@@ -8,21 +8,22 @@
 Song.delete_all
 Artist.delete_all
 
-song1 = Song.create(song_name: "Sign of The Times")
-song2 = Song.create(song_name: "The Beautiful Ones")
-song3 = Song.create(song_name: "Housequake")
 
-song4 = Song.create(song_name: "As I sat sadly by her side")
-song5 = Song.create(song_name: "Darker with the day")
-song6 = Song.create(song_name: "And no more shall we part")
+song1 = Song.create(name: "Sign of The Times")
+song2 = Song.create(name: "The Beautiful Ones")
+song3 = Song.create(name: "Housequake")
 
-song7 = Song.create(song_name: "Faraway")
-song8 = Song.create(song_name: "Identity Thief")
-song9 = Song.create(song_name: "March")
+song4 = Song.create(name: "As I sat sadly by her side")
+song5 = Song.create(name: "Darker with the day")
+song6 = Song.create(name: "And no more shall we part")
 
-prince = Artist.create(artist_name: "Prince")
-nick_cave_and_the_bad_seeds = Artist.create(artist_name: "Nick Cave and the Bad Seeds")
-joshua_redman = Artist.create(artist_name: "Joshua Redman")
+song7 = Song.create(name: "Faraway")
+song8 = Song.create(name: "Identity Thief")
+song9 = Song.create(name: "March")
+
+prince = Artist.create(name: "Prince", img_url: "http://res.cloudinary.com/ddpouudhk/image/upload/v1477255038/princebb_uvksoi.jpg")
+nick_cave_and_the_bad_seeds = Artist.create(name: "Nick Cave and the Bad Seeds", img_url: "http://res.cloudinary.com/ddpouudhk/image/upload/v1477255209/images.duckduckgo.com_n4cdwr.jpg")
+joshua_redman = Artist.create(name: "Joshua Redman", img_url: "http://res.cloudinary.com/ddpouudhk/image/upload/c_scale,w_654/v1477255219/00a03ec6141943_res_h470_p2ygkz.jpg")
 
 prince.songs << [song1]
 prince.songs << [song2]
