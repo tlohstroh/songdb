@@ -18,6 +18,4 @@ class Artist < ApplicationRecord
     order(:created_at).reverse
   end
 
-
-
 end
