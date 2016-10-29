@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   margin: 0px;
+   padding: 0px;
+ }
+
+ .container{
+   padding: 130px;
+ }
+
+ .artist-thumb{
+   border: 1px solid #a1a1a1;
+   border-radius: 90px;
+   width: 150px;
+   height: 150px;
+ }
+
+ .artist-box{
+   border: 1px solid #a1a1a1;
+   padding: 20px;
+   margin-bottom: 10px;
+
+ }
