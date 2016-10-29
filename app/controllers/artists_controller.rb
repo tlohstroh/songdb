@@ -52,5 +52,12 @@ class ArtistsController < ApplicationController
 
   end
 
+  private
+
+  def artist_params
+    prams.require(:artist).permit(:name, :img_url)
+
+  end
+
 
 end
