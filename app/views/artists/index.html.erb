@@ -1,13 +1,19 @@
-<h1>Artists</h1>
+<!-- <div class="container"> -->
+  <h1>Artists</h1>
 
-<ul class="sorting_links">
-  <li><%= link_to "sort by name (asc)", :sort => "name", :direction => "asc" %></li>
-  <li><%= link_to "sort by name (desc)", :sort => "name", :direction => "desc" %></li>
-  <li><%= link_to "sort by date added (asc)", :sort => "created_at", :direction => "asc" %></li>
-  <li><%= link_to "sort by date added (desc)", :sort => "created_at", :direction => "desc" %></li>
-</ul>
+  <ul class="sorting_links">
+    <li><%= link_to "sort by name (asc)", :sort => "name", :direction => "asc" %></li>
+    <li><%= link_to "sort by name (desc)", :sort => "name", :direction => "desc" %></li>
+    <li><%= link_to "sort by date added (asc)", :sort => "created_at", :direction => "asc" %></li>
+    <li><%= link_to "sort by date added (desc)", :sort => "created_at", :direction => "desc" %></li>
+  </ul>
 
-<% @artists.each do | artist| %>
-<%= link_to artist.name, artist_path(artist.id) %><br>
-<a href="<%=artist_path(artist.id) %>"><img class="artist-thumb" src="<%=artist.img_url%>" alt = "<%= artist.name %>" style="width:300px;height:300px;"></a><br>
-<% end %>
+
+  <% @artists.each do | artist| %>
+    <div class="artist-box">
+    <a href="<%=artist_path(artist.id) %>"><img class="artist-thumb" src="<%=artist.img_url%>" alt = "<%= artist.name %>" ></a><br>
+    <%= link_to artist.name, artist_path(artist.id) %><br>
+    </div>
+  <% end %>
+
+<!-- </div>  -->
