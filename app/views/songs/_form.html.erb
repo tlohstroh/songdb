@@ -1,0 +1,16 @@
+<div class="form">
+
+  
+
+  <%= form_for @song do |i| %>
+    <%= i.label "Songname" %>
+    <%= i.text_field :name %>
+
+     <%= i.label :artist %>
+     <%= i.collection_select(:artist_id, Artist.all, :id, :name) %>
+
+    <!-- If song is new, show Create button, else show Update button! -->
+    <%= i.submit (@song.new_record? ? "Create" : "Update") %>
+  <%end%>
+
+</div>

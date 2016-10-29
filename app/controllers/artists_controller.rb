@@ -8,7 +8,6 @@ class ArtistsController < ApplicationController
     else
       @artists = Artist.order_by_name
     end
-
   end
 
   def show
@@ -40,7 +39,7 @@ class ArtistsController < ApplicationController
       redirect_to artist_path(@artist), notice: "Artist succesfully updated"
     else
       render :edit
-
+    end
   end
 
   def destroy
