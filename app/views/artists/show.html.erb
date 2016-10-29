@@ -14,20 +14,22 @@
 
 
 
-<table>
+<table >
   <tr>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+
+  <!-- This is a stupid soluton, as I am itterating over all the songs! -->
+  <!-- need to do this differently by changing what @song is!! -->
   <%counter = 0%>
   <% @songs.each do |song| %>
-    <%if song.artist[:id] == @artist[:id]%>
       <tr>
         <td><%=counter += 1%></td>
         <td><%=song.name%></td>
         <td>remove</td>
       </tr>
-    <%end%>
+
   <%end%>
 </table>

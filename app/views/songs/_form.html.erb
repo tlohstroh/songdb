@@ -1,10 +1,11 @@
 <div class="form">
 
-  
+
 
   <%= form_for @song do |i| %>
     <%= i.label "Songname" %>
-    <%= i.text_field :name %>
+    <%= i.text_field :name, placeholder: "Enter your song!" %>
+
 
      <%= i.label :artist %>
      <%= i.collection_select(:artist_id, Artist.all, :id, :name) %>
