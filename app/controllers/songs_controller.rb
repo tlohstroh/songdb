@@ -1,12 +1,17 @@
 class SongsController < ApplicationController
     before_action :set_song, only: [:edit, :update, :show, :destroy]
-    before_action :set_artist, only: [:edit, :update, :show, :destroy]
+    before_action :set_artist, only: [ :edit, :update, :show, :destroy]
 
+
+  # GET /todos
+  # GET /todos.json
   def index
     @songs  = Song.all
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    @songs = @songs.artist
   end
 
   def new
@@ -15,12 +20,23 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-    if @song.save
-      redirect_to song_path(@song), notice: "Song succesfully created"
-    else
-      render :edit
+    artist_id = @song.artist_id
+    @artist = Artist.find(artist_id)
+    respond_to do |format|
+      if @song.save
+        # I copied thsi from todo_ajax, don't understand it yet.
+        format.html { redirect_to artist_path(@artist), notice: "Song succesfully created!" }
+        format.json { render :show, status: :created, location: @song }
+      # redirect_to song_path(@song), notice: "Song succesfully created"
+      else
+        # render :edit
+        format.html { render :edit }
+        format.json { render json: @song.errors, status: :unprocessable_entity }
+      end
     end
   end
+
+
 
   def edit
   end
@@ -36,6 +52,7 @@ class SongsController < ApplicationController
   end
 
   def destroy
+    @songs =
 
     @song.destroy
 

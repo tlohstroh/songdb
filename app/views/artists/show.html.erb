@@ -9,7 +9,8 @@
 <%end%>
 </ul> -->
 
-<p><%=link_to "[Add a song]", new_song_path %></P>
+
+<p><%= render "songs/form" %></P>
 <!-- link_to "[Delete_all]", -->
 
 
@@ -20,14 +21,12 @@
     <th></th>
     <th></th>
   </tr>
+
   <%counter = 0%>
   <% @songs.each do |song| %>
-    <%if song.artist[:id] == @artist[:id]%>
       <tr>
-        <td><%=counter += 1%></td>
         <td><%=song.name%></td>
         <td>remove</td>
       </tr>
-    <%end%>
   <%end%>
 </table>
