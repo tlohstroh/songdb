@@ -1,5 +1,7 @@
 class ArtistsController < ApplicationController
 
+  # GET /todos
+  # GET /todos.json
   def index
     # @artists = Artist.order_by_name
     if params[:sort]
@@ -12,8 +14,10 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    @songs = Song.all
+    @songs = @artist.songs
+    @song = Song.new
   end
+  
 
   def new
     @artist = Artist.new
