@@ -2,6 +2,9 @@ class SongsController < ApplicationController
     before_action :set_song, only: [:edit, :update, :show, :destroy]
     before_action :set_artist, only: [:edit, :update, :show, :destroy]
 
+
+    # GET /todos
+    # GET /todos.json
   def index
     @songs  = Song.all
   end
@@ -16,9 +19,14 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
-      redirect_to song_path(@song), notice: "Song succesfully created"
+      # I copied thsi from todo_ajax, don't understand it yet.
+      format.html { redirect_to song_path(@song), notice: "Song succesfully created" }
+      format.json { render :show, status: :created, location: @song }
+      # redirect_to song_path(@song), notice: "Song succesfully created"
     else
-      render :edit
+      # render :edit
+      format.html { render :edit }
+      format.json { render json: @song.errors, status: :unprocessable_entity }
     end
   end
 
