@@ -1,32 +1,15 @@
 <h1><%= @artist.name %></h1>
 
-<!-- <ul>
-<% @songs.each do |song| %>
-  <%if song.artist[:id] == @artist[:id]%>
-  <li><%=song.name%></li>
+<form>
+<p><%= render "/songs/form" %></P>
+</form>
 
-  <%end%>
-<%end%>
-</ul> -->
-
-
-<p><%= render "songs/form" %></P>
-<!-- link_to "[Delete_all]", -->
-
-
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <%counter = 0%>
+<ol>
   <% @songs.each do |song| %>
-      <tr>
-        <td><%=song.name%></td>
-        <td>remove</td>
-      </tr>
+    <li><%=song.name%></li>
   <%end%>
-</table>
+</ol>
+
+<div>
+   <%= link_to "[Delete all songs]", artist_path(id: @artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

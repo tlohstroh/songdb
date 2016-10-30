@@ -52,7 +52,6 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    @songs =
 
     @song.destroy
 
