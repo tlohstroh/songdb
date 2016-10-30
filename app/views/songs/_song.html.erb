@@ -1,0 +1,5 @@
+
+    <li class="song">
+      <span> <%=song.name%> </span>
+      <span class="delete-song"><%=link_to "delete", song_path(id: song.id), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete this song?" }%></span>
+    </li>
