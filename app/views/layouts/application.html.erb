@@ -12,8 +12,33 @@
     <div class="container">
 
     <p id="notice"><%= notice %></p>
-    
+
     <%= yield %>
     </div>
+
+
+  <script>
+
+  $("delete-song").bind('click', function(event){
+    event.preventDefault();
+
+  })
+
+
+  function deleteSong(songId) {
+    songId = ????;
+
+    $.ajax({
+      type: "DELETE",
+      url: "/songs/" + songId,})
+
+      .done(function(data) {
+        $("#"+songId).remove();
+      });
+  }
+
+    </script>
+
+
   </body>
 </html>
