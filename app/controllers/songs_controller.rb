@@ -22,7 +22,7 @@ class SongsController < ApplicationController
     @artist = Artist.find(artist_id)
     @songs = @artist.songs
       if @song.save
-        redirect_to artist_path(@artist), notice: "Song succesfully created!" }
+        redirect_to artist_path(@artist), {notice: "Song succesfully created!" }
       else
         render :edit
       end
