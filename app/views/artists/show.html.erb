@@ -15,7 +15,12 @@
 <ol id="songlist" >
   <%= render @songs %>
 </ol>
+<form>
+<span>Songname </span><input type="text" id="new-song" placeholder="Enter your song!">
+<form>
 
+<div>
 
 <%= link_to "[Delete all songs]", artist_path(id: @artist.id), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete all these songs?" } %>
 <%= link_to "[Back to all artists]", artists_path() %>
+</div>
