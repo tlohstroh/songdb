@@ -23,7 +23,12 @@ class SongsController < ApplicationController
     @artist = Artist.find(artist_id)
     @songs = @artist.songs
       if @song.save
-        redirect_to artist_path(@artist), {notice: "Song succesfully created!" }
+        respond_to do |format|
+          format.html {redirect_to artist_path(@artist),notice: "Song succesfully created!" }
+          format.js
+        end
+
+        # redirect_to artist_path(@artist), {notice: "Song succesfully created!" }
         #redirect_to song_path(@song), notice: "Song succesfully created"
       else
         render :edit
