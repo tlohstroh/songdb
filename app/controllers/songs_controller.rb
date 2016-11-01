@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
     before_action :set_song, only: [:edit, :update, :show, :destroy]
     # before_action :set_artist, only: [ :edit, :update,  :destroy]
-
+    
 
   def index
     @songs  = Song.all

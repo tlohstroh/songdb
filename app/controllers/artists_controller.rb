@@ -16,6 +16,10 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @songs = @artist.songs
     @song = Song.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
 
