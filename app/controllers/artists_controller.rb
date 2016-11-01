@@ -16,8 +16,12 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @songs = @artist.songs
     @song = Song.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
-  
+
 
   def new
     @artist = Artist.new
@@ -48,9 +52,7 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist = Artist.find(params[:id])
-
     @artist.destroy
-
     redirect_to artists_path
 
   end

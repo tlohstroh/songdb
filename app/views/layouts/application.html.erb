@@ -12,8 +12,107 @@
     <div class="container">
 
     <p id="notice"><%= notice %></p>
-    
+
     <%= yield %>
     </div>
+
+
+  <!-- <script>
+
+
+  function submitSong(event) {
+  // stop the form from doing the default action, submitting...
+  event.preventDefault();
+  // Declare a variable title,
+  // and set it equal to whatever is the value of the element with id new-song
+  var title = $("#new-song").val();
+  // call the function CreateSong and give the title as its argument
+  createSong(title);
+  // select element with id new-song and clear its content
+  $("#new-song").val(null);
+  }
+
+
+  // *** This function provides a new song id by counting all the elements
+  // with class .song and adding 1 for the next id
+  function nextSongId() {
+    return $(".song").length + 1;
+  }
+
+
+  // *******************
+  // *** This function creates a song and intiates a AJAX call to save it
+  function createSong(title) {
+    var songId = "song-" + nextSongId()
+    // Declare a valiable ListItem and set is equal to...
+    // (select all the list itmes on the page??)
+    var listItem = $("<li></li>");
+    // Add the class "song" to every list-item?
+    listItem.addClass("song");
+
+    // Declare a variable space
+    // and set it equal to " " (TODO I don't get the syntax yet!!!)
+    var space = document.createTextNode(" ");
+    // Declare a variable label
+    // and set it equal to page element <label></label>
+    var label = $('<span id = "delete-songs" ></span>');
+    // Add the title to the label
+    label.html(title);
+    // Append the label (with the title) to the new list item
+    listItem.append(label);
+    // Get the element wiht id songlist
+    // Append the list item to the element with the id songlist
+    $("#songlist").append( listItem );
+
+
+    // var newSong = { name: title, artist_id: ???? };
+
+
+
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/songs.json",
+    //   data: JSON.stringify({
+    //       song: newSong
+    //   }),
+    //   contentType: "application/json",
+    //   dataType: "json"
+    // });
+
+
+  }
+
+
+
+
+
+  // This function deletes all songs with the .song class (so all songs)
+  function deleteSongs(event) {
+  event.preventDefault();
+  $.when($(".song").remove());
+  }
+
+
+
+
+
+
+
+
+  $(document).ready(function(){
+    // This binds the submitSong funtion to the form
+    $("form").bind('submit', submitSong);
+
+    $("#delete-all-songs").bind('click', deleteSongs);
+
+    $("#delete-song").bind('click', deleteOneSong);
+  });
+
+
+
+</script> -->
+
+
+
   </body>
 </html>
